@@ -97,9 +97,9 @@ public class nu_1 extends AppCompatActivity {
 
 
         sexo= (Spinner) findViewById(R.id.spSexoU);
-        //ConsultarListaSexo();
-       // ArrayAdapter<CharSequence> adaptadorSexo =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listasexo);
-       // sexo.setAdapter(adaptadorSexo);
+        ConsultarListaSexo();
+        ArrayAdapter<CharSequence> adaptadorSexo =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listasexo);
+        sexo.setAdapter(adaptadorSexo);
 
        //edittex nombre y apellido
          nombre= (EditText)findViewById(R.id.nombreUsuario);
