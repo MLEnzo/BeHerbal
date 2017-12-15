@@ -77,15 +77,15 @@ public class nu_1 extends AppCompatActivity {
 
 
         //conexion a base de datos
-      // conn=new BaseDeDatos(getApplicationContext());
+       conn=new BaseDeDatos(this.getApplicationContext());
 
         //spinner Edad
 
         edad= (Spinner) findViewById(R.id.spEdadU);
 
-        ConsultarListaEdad();
-        ArrayAdapter<CharSequence> adaptadorEdad =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listaEdad);
-        edad.setAdapter(adaptadorEdad);
+        //ConsultarListaEdad();
+        //ArrayAdapter<CharSequence> adaptadorEdad =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listaEdad);
+        //edad.setAdapter(adaptadorEdad);
 
 
 
@@ -94,9 +94,9 @@ public class nu_1 extends AppCompatActivity {
 
 
         sexo= (Spinner) findViewById(R.id.spSexoU);
-        ConsultarListaSexo();
-        ArrayAdapter<CharSequence> adaptadorSexo =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listasexo);
-        sexo.setAdapter(adaptadorSexo);
+        //ConsultarListaSexo();
+       // ArrayAdapter<CharSequence> adaptadorSexo =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listasexo);
+       // sexo.setAdapter(adaptadorSexo);
 
        //edittex nombre y apellido
          nombre= (EditText)findViewById(R.id.nombreUsuario);
@@ -112,10 +112,10 @@ public class nu_1 extends AppCompatActivity {
 
                 Intent intent= new Intent(nu_1.this, nu_2.class);
                 startActivity(intent);
-                selectSexo=sexo.getSelectedItem().toString();
-                selectEdad= Integer.parseInt(edad.getSelectedItem().toString());
-                nameU=nombre.getText().toString();
-                apellU=apellido.getText().toString();
+               // selectSexo=sexo.getSelectedItem().toString();
+               // selectEdad= Integer.parseInt(edad.getSelectedItem().toString());
+              //  nameU=nombre.getText().toString();
+              //  apellU=apellido.getText().toString();
 
             }
         });
@@ -157,7 +157,7 @@ public class nu_1 extends AppCompatActivity {
     //metodo Cunsultar sexo de base de datos
     private void ConsultarListaSexo() {
 
-        conn=new BaseDeDatos(this.getApplicationContext());
+
         SQLiteDatabase db=conn.getReadableDatabase();
 
         sexoU sx=null;
@@ -192,7 +192,7 @@ public class nu_1 extends AppCompatActivity {
 
     //metodo Cunsultar edad de base de datos
     private void ConsultarListaEdad() {
-        conn=new BaseDeDatos(this.getApplicationContext());
+      
         SQLiteDatabase db=conn.getReadableDatabase();
 
         EdadU ed=null;
