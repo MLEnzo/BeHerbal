@@ -70,7 +70,6 @@ public class nu_3 extends AppCompatActivity {
 
 
 
-
             }
 
             private void consultaPesoIdealH() {
