@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:inputType="none"
         android:textIsSelectable="true"
-        android:text="Hola"
+        android:text=""
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20sp"/>
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:inputType="none"
         android:textIsSelectable="true"
-        android:text="Hola"
+        android:text=""
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20sp"/>
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:inputType="none"
         android:textIsSelectable="true"
-        android:text="Hola"
+        android:text=""
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20sp"/>
 
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:inputType="none"
         android:textIsSelectable="true"
-        android:text="Hola"
+        android:text=""
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20sp"/>
 

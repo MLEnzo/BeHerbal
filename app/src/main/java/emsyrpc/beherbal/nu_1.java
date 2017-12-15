@@ -112,10 +112,10 @@ public class nu_1 extends AppCompatActivity {
 
                 Intent intent= new Intent(nu_1.this, nu_2.class);
                 startActivity(intent);
-                selectSexo=sexo.getSelectedItem().toString();
-                selectEdad= Integer.parseInt(edad.getSelectedItem().toString());
-                nameU=nombre.getText().toString();
-                apellU=apellido.getText().toString();
+               // selectSexo=sexo.getSelectedItem().toString();
+               // selectEdad= Integer.parseInt(edad.getSelectedItem().toString());
+               // nameU=nombre.getText().toString();
+               // apellU=apellido.getText().toString();
 
             }
         });
@@ -157,6 +157,7 @@ public class nu_1 extends AppCompatActivity {
     //metodo Cunsultar sexo de base de datos
     private void ConsultarListaSexo() {
 
+        conn=new BaseDeDatos(getApplicationContext());
         SQLiteDatabase db=conn.getReadableDatabase();
 
         sexoU sx=null;
@@ -191,7 +192,7 @@ public class nu_1 extends AppCompatActivity {
 
     //metodo Cunsultar edad de base de datos
     private void ConsultarListaEdad() {
-
+        conn=new BaseDeDatos(getApplicationContext());
         SQLiteDatabase db=conn.getReadableDatabase();
 
         EdadU ed=null;
