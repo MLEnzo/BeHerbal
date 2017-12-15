@@ -1,0 +1,50 @@
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="66sp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar una nueva evaluacion"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btNuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nuevo"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar una existente"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/btExistente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Existente"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"/>
+
+
+
+
+
+</LinearLayout>

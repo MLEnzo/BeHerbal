@@ -1,0 +1,43 @@
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos Obtenidos a partir de su equipo Omrom"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50sp"
+        android:textSize="15dp"/>
+
+
+    <EditText
+        android:id="@+id/etIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60sp"
+        android:hint="Ingrese el Indice de Masa Corporal (I.M.C.)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etPGrasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40sp"
+        android:hint="Ingrese el % de Grasa Corporal"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btEvaluar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evaluar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60sp"
+        />
+
+</LinearLayout>

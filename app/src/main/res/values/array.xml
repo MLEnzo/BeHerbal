@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Sexo">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+
+    <string-array name="Muñeca">
+        <item>Pequeña</item>
+        <item>Mediana</item>
+        <item>Grande</item>
+    </string-array>
+
+
+</resources>

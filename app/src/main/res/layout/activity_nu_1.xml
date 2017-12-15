@@ -1,0 +1,86 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ImgAvatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/account_box2" />
+
+    <Button
+        android:id="@+id/btFotoU"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_gravity="center"
+        android:drawableBottom="@drawable/camera_enhance"
+        />
+
+    <EditText
+        android:id="@+id/nombreUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10sp"
+        android:inputType="textPersonName"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/apellidoUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10sp"
+        android:inputType="textPersonName"
+        android:hint="Apellido" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13sp"
+        android:text="Edad"
+        android:textSize="16sp"
+        />
+
+    <Spinner
+        android:id="@+id/spEdadU"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13sp"
+        android:text="Sexo"
+        android:textSize="16sp"
+        />
+
+    <Spinner
+        android:id="@+id/spSexoU"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11sp"
+
+        />
+
+
+    <Button
+        android:id="@+id/btSiguiente1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="2sp"
+        android:text="Sig"
+
+        />
+
+
+</LinearLayout>
