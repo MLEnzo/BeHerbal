@@ -115,10 +115,10 @@ public class nu_1 extends AppCompatActivity {
 
                 Intent intent= new Intent(nu_1.this, nu_2.class);
                 startActivity(intent);
-               // selectSexo=sexo.getSelectedItem().toString();
-               // selectEdad= Integer.parseInt(edad.getSelectedItem().toString());
-              //  nameU=nombre.getText().toString();
-              //  apellU=apellido.getText().toString();
+                selectSexo=sexo.getSelectedItem().toString();
+                selectEdad= Integer.parseInt(edad.getSelectedItem().toString());
+                nameU=nombre.getText().toString();
+                apellU=apellido.getText().toString();
 
             }
         });
