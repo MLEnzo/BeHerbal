@@ -28,7 +28,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db2, int i, int i1) {
-        db2.execSQL("DROP TABLE IF EXIST usuario");
+        db2.execSQL("DROP TABLE IF EXISTS usuario");
 
 
         onCreate(db2);
