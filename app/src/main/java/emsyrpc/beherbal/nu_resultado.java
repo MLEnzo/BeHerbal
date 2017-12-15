@@ -10,7 +10,7 @@ import static emsyrpc.beherbal.nu_3.pesoId;
 public class nu_resultado extends AppCompatActivity {
 
 
-    EditText pesoIdeal;
+    EditText pesoIdeal,pesoPerder,grIdeal,grPerder;
 
 
 
@@ -24,10 +24,16 @@ public class nu_resultado extends AppCompatActivity {
         setContentView(R.layout.activity_nu_resultado);
 
         pesoIdeal=(EditText)findViewById(R.id.etPesoIdealR);
+        pesoPerder=(EditText)findViewById(R.id.pesoAPerder);
+        grIdeal=(EditText)findViewById(R.id.porcjGrasaIdeal);
+        grPerder=(EditText)findViewById(R.id.grasacorporal);
 
       //  pesoIdeal.setText(" min="+pesoId.getPi_min()+" med="+pesoId.getPi_med()+" gr="+pesoId.getPi_max()+" ");
 
         pesoIdeal.setText(" "+idEst);
+        pesoPerder.setText("0.0");
+        grIdeal.setText("0.0");
+        grPerder.setText("0.0");
 
 
 

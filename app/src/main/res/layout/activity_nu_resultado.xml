@@ -31,6 +31,7 @@
         android:layout_marginTop="20sp" />
 
     <EditText
+        android:id="@+id/pesoAPerder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="none"
@@ -47,6 +48,7 @@
         android:layout_marginTop="20sp" />
 
     <EditText
+        android:id="@+id/porcjGrasaIdeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="none"
@@ -63,6 +65,7 @@
         android:layout_marginTop="20sp" />
 
     <EditText
+        android:id="@+id/grasacorporal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="none"

@@ -46,6 +46,7 @@ public class nu_3 extends AppCompatActivity {
         imc= (EditText) findViewById(R.id.etIMC);
         grasa= (EditText) findViewById(R.id.etPGrasa);
         btEvaluar= (Button) findViewById(R.id.btEvaluar);
+        imc.setText(""+idEst);
 
 
         //boton evaluar
@@ -62,7 +63,7 @@ public class nu_3 extends AppCompatActivity {
 
                 //Obtencion de datos para mostrar en resultados
 
-               // if(selectSexo.equals("Hombre")){consultaPesoIdealH();}
+              //  if(selectSexo.equals("Hombre")){consultaPesoIdealH();}
                // if(selectSexo.equals("Mujer")){consultaPesoIdealM();}
 
 
@@ -80,9 +81,6 @@ public class nu_3 extends AppCompatActivity {
                 if(selectMuñeca.equals("Pequeña")){
 
                     Cursor cursor=db.rawQuery("SELECT minimo, medio, maximo  FROM pesoIdealPqH, estaturaH WHERE idPesoIdeal=idEstatura AND idEstatura="+idEst+"",null);
-
-
-
 
                     pesoId.setIdPesoIdeal(cursor.getInt(0));
                     pesoId.setPi_min(cursor.getDouble(1));
