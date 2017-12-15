@@ -58,7 +58,7 @@ public class nu_2 extends AppCompatActivity {
         setContentView(R.layout.activity_nu_2);
 
         //conexion a base de datos
-        conn=new BaseDeDatos(this.getApplicationContext());
+        conn=new BaseDeDatos(this,"db_beherbal", null, 1);
 
         //spinner muñeca
 

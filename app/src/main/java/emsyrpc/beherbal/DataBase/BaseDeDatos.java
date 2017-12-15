@@ -12,28 +12,28 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
     //declaracion de la bd
     public static final int DATABASE_VERSION=1;
-    public static final String DATABASE_NAME="db_beherbal"; {
-}
+    public static final String DATABASE_NAME="db_beherbal";
 
-    public BaseDeDatos(Context context) {
+    public BaseDeDatos(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db2) {
-        db2.execSQL(EstructuraDB.CREAR_TABLA_USUARIO);
-
-
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(EstructuraDB.CREAR_TABLA_USUARIO);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db2, int i, int i1) {
-        db2.execSQL("DROP TABLE IF EXISTS usuario");
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
-
-        onCreate(db2);
-
+        db.execSQL("DROP TABLE IF EXISTS usuario");
+        onCreate(db);
     }
+
+
+
+
+
 
 
 }

@@ -30,7 +30,7 @@ public class nu_3 extends AppCompatActivity {
     EditText imc,grasa;
     //*****************************************
 
-    BaseDeDatos conn = new BaseDeDatos(this.getApplicationContext());
+    BaseDeDatos conn=new BaseDeDatos(this,"db_beherbal", null, 1);
     Button btEvaluar;
 
 

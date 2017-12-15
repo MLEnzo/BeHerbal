@@ -25,8 +25,11 @@ import java.sql.Blob;
 import java.util.ArrayList;
 
 import emsyrpc.beherbal.DataBase.BaseDeDatos;
+import emsyrpc.beherbal.DataBase.EstructuraDB;
 import emsyrpc.beherbal.entidades.EdadU;
 import emsyrpc.beherbal.entidades.sexoU;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 public class nu_1 extends AppCompatActivity {
 
@@ -77,15 +80,15 @@ public class nu_1 extends AppCompatActivity {
 
 
         //conexion a base de datos
-       conn=new BaseDeDatos(this.getApplicationContext());
+       conn=new BaseDeDatos(this,"db_beherbal", null, 1);
 
         //spinner Edad
 
         edad= (Spinner) findViewById(R.id.spEdadU);
 
-        //ConsultarListaEdad();
-        //ArrayAdapter<CharSequence> adaptadorEdad =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listaEdad);
-        //edad.setAdapter(adaptadorEdad);
+        ConsultarListaEdad();
+        ArrayAdapter<CharSequence> adaptadorEdad =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listaEdad);
+       edad.setAdapter(adaptadorEdad);
 
 
 
@@ -154,6 +157,45 @@ public class nu_1 extends AppCompatActivity {
 
     }
 
+    //metodo Cunsultar edad de base de datos
+    private void ConsultarListaEdad() {
+
+        SQLiteDatabase db=conn.getReadableDatabase();
+
+        EdadU ed=null;
+        edades=new ArrayList<EdadU>();
+
+        Cursor cursor;
+        cursor = db.rawQuery("SELECT * FROM "+ EstructuraDB.TABLA_EDAD,null);
+
+        while (cursor.moveToNext()){
+
+            ed= new EdadU();
+
+            ed.setIdEdad(cursor.getInt(0));
+            ed.setEdad(cursor.getInt(1));
+
+            edades.add(ed);
+
+        }
+
+        obtenerListaEd();
+    }
+
+
+    //metodo guardar en arrayList datos edad de la bd
+    private void obtenerListaEd() {
+
+        listaEdad=new ArrayList<Integer>();
+
+        for(int i=0; i<edades.size(); i++){
+
+            listaEdad.add(edades.get(i).getEdad());
+        }
+
+    }
+
+
     //metodo Cunsultar sexo de base de datos
     private void ConsultarListaSexo() {
 
@@ -190,42 +232,6 @@ public class nu_1 extends AppCompatActivity {
         }
     }
 
-    //metodo Cunsultar edad de base de datos
-    private void ConsultarListaEdad() {
-      
-        SQLiteDatabase db=conn.getReadableDatabase();
-
-        EdadU ed=null;
-        edades=new ArrayList<EdadU>();
-
-        Cursor cursor=db.rawQuery("SELECT * FROM edad",null);
-
-        while (cursor.moveToNext()){
-
-            ed= new EdadU();
-
-            ed.setIdEdad(cursor.getInt(0));
-            ed.setEdad(cursor.getInt(1));
-
-            edades.add(ed);
-
-        }
-
-        obtenerListaEd();
-    }
-
-
-//metodo guardar en arrayList datos edad de la bd
-    private void obtenerListaEd() {
-
-        listaEdad=new ArrayList<Integer>();
-
-        for(int i=0; i<edades.size(); i++){
-
-            listaEdad.add(edades.get(i).getEdad());
-        }
-
-    }
 
 
 //metodo abrir camara Foto Usuario
