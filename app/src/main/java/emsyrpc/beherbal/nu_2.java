@@ -23,6 +23,9 @@ import emsyrpc.beherbal.entidades.estaturaU;
 import emsyrpc.beherbal.entidades.muñecaU;
 import emsyrpc.beherbal.entidades.sexoU;
 
+import static emsyrpc.beherbal.nu_1.apellU;
+import static emsyrpc.beherbal.nu_1.nameU;
+import static emsyrpc.beherbal.nu_1.selectEdad;
 import static emsyrpc.beherbal.nu_1.selectSexo;
 
 public class nu_2 extends AppCompatActivity {
@@ -35,7 +38,7 @@ public class nu_2 extends AppCompatActivity {
     public static Double pesoAU=0.0;
     public  static Spinner muñeca, estatura;
     EditText pesoActual;
-
+    TextView resultN1;
 
 
 
@@ -63,7 +66,12 @@ public class nu_2 extends AppCompatActivity {
 
         muñeca= (Spinner) findViewById(R.id.spMedidaMU);
 
+        //Texview Resultado n1//////////////////////////////////////////////
 
+        resultN1=(TextView)findViewById(R.id.ResultadoN1);
+        resultN1.setText("sexo "+selectSexo+"edad "+selectEdad+"nombre "+nameU+"apell "+apellU);
+
+        ////////////////////////////////////////////
 
         ConsultarListaMuñeca();
         ArrayAdapter<CharSequence> adaptadorMuñeca =new ArrayAdapter(this, android.R.layout.simple_spinner_item, listaMuñca);
@@ -100,7 +108,7 @@ public class nu_2 extends AppCompatActivity {
 
                 //carga de datos
                 selectMuñeca=muñeca.getSelectedItem().toString();
-                idEst=(estatura.getSelectedItemPosition());
+                idEst=(estatura.getSelectedItemPosition()+1);
 
                 pesoAU= Double.parseDouble(pesoActual.getText().toString());
 

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import emsyrpc.beherbal.DataBase.BaseDeDatos;
 import emsyrpc.beherbal.entidades.pesoIdealU;
@@ -26,6 +27,7 @@ public class nu_3 extends AppCompatActivity {
     public static Double imcU=0.0;
     public static Double grasCU=0.0;
     public static pesoIdealU pesoId= new pesoIdealU();
+    TextView resultadoN2;
 
     EditText imc,grasa;
     //*****************************************
@@ -48,6 +50,11 @@ public class nu_3 extends AppCompatActivity {
         btEvaluar= (Button) findViewById(R.id.btEvaluar);
         imc.setText(""+idEst);
 
+
+        ///////////////////////////////////////////////////////
+        resultadoN2=(TextView)findViewById(R.id.ResultadoN2);
+        resultadoN2.setText("muñeca "+selectMuñeca+" edad "+idEst);/////////ferificar obtener la Edad
+        //////////////////////////////////////////////////////////
 
         //boton evaluar
 
