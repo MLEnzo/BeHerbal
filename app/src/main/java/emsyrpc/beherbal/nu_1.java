@@ -59,6 +59,7 @@ public class nu_1 extends AppCompatActivity {
     Spinner sexo, edad;
 
 
+
     //******************************************
 
     //spinners
