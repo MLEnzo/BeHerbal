@@ -34,7 +34,8 @@ public class nu_2 extends AppCompatActivity {
     //datos para usuario y resultado
     //**********************************************
     public static String selectMuñeca="";
-    public static Integer idEst=0;
+    public static String selectEst="";
+    public static ArrayList<Double> buscaListEst;
     public static Double pesoAU=0.0;
     public  static Spinner muñeca, estatura;
     EditText pesoActual;
@@ -108,7 +109,7 @@ public class nu_2 extends AppCompatActivity {
 
                 //carga de datos
                 selectMuñeca=muñeca.getSelectedItem().toString();
-                idEst=(estatura.getSelectedItemPosition()+1);
+                selectEst=(estatura.getSelectedItem().toString());
 
                 pesoAU= Double.parseDouble(pesoActual.getText().toString());
 
@@ -217,6 +218,8 @@ public class nu_2 extends AppCompatActivity {
 
             listaEstatura.add(estaturaL.get(i).getEstatura());
         }
+
+        buscaListEst=listaEstatura;
 
     }
 

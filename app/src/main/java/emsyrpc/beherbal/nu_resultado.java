@@ -4,7 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
-import static emsyrpc.beherbal.nu_2.idEst;
+
+import static emsyrpc.beherbal.nu_3.idEst;
 import static emsyrpc.beherbal.nu_3.pesoId;
 
 public class nu_resultado extends AppCompatActivity {

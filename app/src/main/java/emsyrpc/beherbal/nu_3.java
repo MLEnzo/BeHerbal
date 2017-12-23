@@ -14,8 +14,9 @@ import android.widget.TextView;
 import emsyrpc.beherbal.DataBase.BaseDeDatos;
 import emsyrpc.beherbal.entidades.pesoIdealU;
 
-import static emsyrpc.beherbal.nu_1.selectSexo;
-import static emsyrpc.beherbal.nu_2.idEst;
+
+import static emsyrpc.beherbal.nu_2.buscaListEst;
+import static emsyrpc.beherbal.nu_2.selectEst;
 import static emsyrpc.beherbal.nu_2.selectMuñeca;
 
 public class nu_3 extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class nu_3 extends AppCompatActivity {
     public static Double imcU=0.0;
     public static Double grasCU=0.0;
     public static pesoIdealU pesoId= new pesoIdealU();
+    public static Integer idEst;
     TextView resultadoN2;
 
     EditText imc,grasa;
@@ -41,7 +43,15 @@ public class nu_3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nu_3);
 
+        ///for pra obtener id de estatura
+        for(int i=0; i<buscaListEst.size(); i++){
 
+            if(selectEst.equals(buscaListEst.get(i).toString())){
+
+                idEst=i+1;
+            }
+
+        }
 
         //editTex
 
@@ -53,7 +63,7 @@ public class nu_3 extends AppCompatActivity {
 
         ///////////////////////////////////////////////////////
         resultadoN2=(TextView)findViewById(R.id.ResultadoN2);
-        resultadoN2.setText("muñeca "+selectMuñeca+" edad "+idEst);/////////ferificar obtener la Edad
+        resultadoN2.setText("muñeca "+selectMuñeca+" edad "+idEst);/////////ferificar obtener la Estatura id
         //////////////////////////////////////////////////////////
 
         //boton evaluar
