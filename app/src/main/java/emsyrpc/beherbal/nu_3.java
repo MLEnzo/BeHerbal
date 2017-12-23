@@ -15,6 +15,7 @@ import emsyrpc.beherbal.DataBase.BaseDeDatos;
 import emsyrpc.beherbal.entidades.pesoIdealU;
 
 
+import static emsyrpc.beherbal.nu_1.selectSexo;
 import static emsyrpc.beherbal.nu_2.buscaListEst;
 import static emsyrpc.beherbal.nu_2.selectEst;
 import static emsyrpc.beherbal.nu_2.selectMuñeca;
@@ -58,12 +59,12 @@ public class nu_3 extends AppCompatActivity {
         imc= (EditText) findViewById(R.id.etIMC);
         grasa= (EditText) findViewById(R.id.etPGrasa);
         btEvaluar= (Button) findViewById(R.id.btEvaluar);
-        imc.setText(""+idEst);
+
 
 
         ///////////////////////////////////////////////////////
         resultadoN2=(TextView)findViewById(R.id.ResultadoN2);
-        resultadoN2.setText("muñeca "+selectMuñeca+" edad "+idEst);/////////ferificar obtener la Estatura id
+        resultadoN2.setText("muñeca "+selectMuñeca+" idEstatura "+idEst);/////////ferificar obtener la Estatura id
         //////////////////////////////////////////////////////////
 
         //boton evaluar
@@ -80,8 +81,8 @@ public class nu_3 extends AppCompatActivity {
 
                 //Obtencion de datos para mostrar en resultados
 
-              //  if(selectSexo.equals("Hombre")){consultaPesoIdealH();}
-               // if(selectSexo.equals("Mujer")){consultaPesoIdealM();}
+                if(selectSexo.equals("Hombre")){consultaPesoIdealH();}
+                if(selectSexo.equals("Mujer")){consultaPesoIdealM();}
 
 
 
@@ -99,10 +100,15 @@ public class nu_3 extends AppCompatActivity {
 
                     Cursor cursor=db.rawQuery("SELECT minimo, medio, maximo  FROM pesoIdealPqH, estaturaH WHERE idPesoIdeal=idEstatura AND idEstatura="+idEst+"",null);
 
-                    pesoId.setIdPesoIdeal(cursor.getInt(0));
-                    pesoId.setPi_min(cursor.getDouble(1));
-                    pesoId.setPi_med(cursor.getDouble(2));
-                    pesoId.setPi_max(cursor.getDouble(3));
+                    if(cursor.moveToFirst()){
+                        do{
+                            pesoId.setIdPesoIdeal(1);
+                            pesoId.setPi_min(cursor.getDouble(0));
+                            pesoId.setPi_med(cursor.getDouble(1));
+                            pesoId.setPi_max(cursor.getDouble(2));
+                        }while (cursor.moveToNext());
+                    }
+
 
 
                 }else if(selectMuñeca.equals("Mediana")){
@@ -110,29 +116,35 @@ public class nu_3 extends AppCompatActivity {
                     Cursor cursor=db.rawQuery("SELECT minimo, medio, maximo  FROM pesoIdealMdH, estaturaH WHERE idPesoIdeal=idEstatura AND idEstatura="+idEst+"",null);
 
 
-
-                    pesoId.setIdPesoIdeal(cursor.getInt(0));
-                    pesoId.setPi_min(cursor.getDouble(1));
-                    pesoId.setPi_med(cursor.getDouble(2));
-                    pesoId.setPi_max(cursor.getDouble(3));
+                    if(cursor.moveToFirst()){
+                        do{
+                            pesoId.setIdPesoIdeal(1);
+                            pesoId.setPi_min(cursor.getDouble(0));
+                            pesoId.setPi_med(cursor.getDouble(1));
+                            pesoId.setPi_max(cursor.getDouble(2));
+                        }while (cursor.moveToNext());
+                    }
 
                 }else if(selectMuñeca.equals("Grande")){
 
                     Cursor cursor=db.rawQuery("SELECT minimo, medio, maximo  FROM pesoIdealGrH, estaturaH WHERE idPesoIdeal=idEstatura AND idEstatura="+idEst+"",null);
 
 
-
-                    pesoId.setIdPesoIdeal(cursor.getInt(0));
-                    pesoId.setPi_min(cursor.getDouble(1));
-                    pesoId.setPi_med(cursor.getDouble(2));
-                    pesoId.setPi_max(cursor.getDouble(3));
+                    if(cursor.moveToFirst()){
+                        do{
+                            pesoId.setIdPesoIdeal(1);
+                            pesoId.setPi_min(cursor.getDouble(0));
+                            pesoId.setPi_med(cursor.getDouble(1));
+                            pesoId.setPi_max(cursor.getDouble(2));
+                        }while (cursor.moveToNext());
+                    }
 
                 }
 
 
 
 
-            }
+            }////perfecto
 
             private void consultaPesoIdealM() {
                 SQLiteDatabase db=conn.getReadableDatabase();
@@ -144,10 +156,14 @@ public class nu_3 extends AppCompatActivity {
 
 
 
-                    pesoId.setIdPesoIdeal(cursor.getInt(0));
-                    pesoId.setPi_min(cursor.getDouble(1));
-                    pesoId.setPi_med(cursor.getDouble(2));
-                    pesoId.setPi_max(cursor.getDouble(3));
+                    if(cursor.moveToFirst()){
+                        do{
+                            pesoId.setIdPesoIdeal(1);
+                            pesoId.setPi_min(cursor.getDouble(0));
+                            pesoId.setPi_med(cursor.getDouble(1));
+                            pesoId.setPi_max(cursor.getDouble(2));
+                        }while (cursor.moveToNext());
+                    }
 
 
                 }else if(selectMuñeca.equals("Mediana")){
@@ -155,26 +171,32 @@ public class nu_3 extends AppCompatActivity {
                     Cursor cursor=db.rawQuery("SELECT minimo, medio, maximo  FROM pesoIdealMdM, estaturaM WHERE idPesoIdeal=idEstatura AND idEstatura="+idEst+"",null);
 
 
-
-                    pesoId.setIdPesoIdeal(cursor.getInt(0));
-                    pesoId.setPi_min(cursor.getDouble(1));
-                    pesoId.setPi_med(cursor.getDouble(2));
-                    pesoId.setPi_max(cursor.getDouble(3));
+                    if(cursor.moveToFirst()){
+                        do{
+                            pesoId.setIdPesoIdeal(1);
+                            pesoId.setPi_min(cursor.getDouble(0));
+                            pesoId.setPi_med(cursor.getDouble(1));
+                            pesoId.setPi_max(cursor.getDouble(2));
+                        }while (cursor.moveToNext());
+                    }
 
                 }else if(selectMuñeca.equals("Grande")){
 
                     Cursor cursor=db.rawQuery("SELECT minimo, medio, maximo  FROM pesoIdealGrM, estaturaM WHERE idPesoIdeal=idEstatura AND idEstatura="+idEst+"",null);
 
 
-
-                    pesoId.setIdPesoIdeal(cursor.getInt(0));
-                    pesoId.setPi_min(cursor.getDouble(1));
-                    pesoId.setPi_med(cursor.getDouble(2));
-                    pesoId.setPi_max(cursor.getDouble(3));
+                    if(cursor.moveToFirst()){
+                        do{
+                            pesoId.setIdPesoIdeal(1);
+                            pesoId.setPi_min(cursor.getDouble(0));
+                            pesoId.setPi_med(cursor.getDouble(1));
+                            pesoId.setPi_max(cursor.getDouble(2));
+                        }while (cursor.moveToNext());
+                    }
 
                 }
 
-            }
+            }///perfecto
 
 
         });
